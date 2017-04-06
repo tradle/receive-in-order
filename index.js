@@ -35,7 +35,11 @@ module.exports = function enforceReceiveOrder ({ node }) {
     const expected = yield getNextSeq({ sender })
     if (expected === seq) return
 
-    ee.emit('missing', [expected, seq - 1])
+    ee.emit('missing', {
+      range: [expected, seq - 1],
+      from: sender
+    })
+
     yield new Promise(resolve => {
       ee.once(getReceivedEventName({ sender, seq: seq - 1 }), resolve)
     })
