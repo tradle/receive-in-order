@@ -1,0 +1,25 @@
+{
+  "name": "@tradle/receive-in-order",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@tradle/engine": "^4.7.1",
+    "@tradle/test-helpers": "tradle/test-helpers",
+    "eslint": "^3.19.0",
+    "memdown": "^1.2.4",
+    "nkey-bitcoin": "^1.2.0",
+    "nkey-curve25519": "^1.0.1",
+    "nkey-ecdsa": "^1.1.0",
+    "random-name": "^0.1.2",
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "stream-collector": "^1.0.1"
+  },
+  "scripts": {
+    "lint": "eslint --quiet .",
+    "test": "BLUEBIRD_DEBUG=1 node test"
+  }
+}
