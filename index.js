@@ -33,7 +33,7 @@ module.exports = function enforceReceiveOrder ({ node }) {
     if (seq === THE_SEQ_BEFORE_TIME) return
 
     const expected = yield getNextSeq({ sender })
-    if (expected === seq) return
+    if (expected >= seq) return
 
     ee.emit('missing', {
       range: [expected, seq - 1],
